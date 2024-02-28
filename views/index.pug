@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+
+    h1 <i>GREEN WITH NV</i>
+ 
+    p I shall wow you with a trip down memory lane for some of the things I've experienced that you were not there for. Each project is a stepping point in my learning journey as I become a developer. Welcome aboard!
+
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      //- Displays an image and link for each project on the home page.  
+
+      each project in projects
+        .cell
+          a(href=`/project/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt=`Thumbnail of ${project.project_name} project`, style="width:300px")
+            h5=`${project.project_name}`
+
